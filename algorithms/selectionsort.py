@@ -3,25 +3,25 @@ class SelectionSort():
     '''
     Selection sort is an O(n^2) sorting algorithm
     '''
-    def selection_sort(list):
+    def selection_sort(unsorted_list):
         '''
         Given a list of items, returns a list of those items in a least to greatest sorted order
 
         Parameters:
-        list (comparable): The comparable object list to be sorted from least to greatest
+        unsorted_list (comparable): The comparable object list to be sorted from least to greatest
 
         Returns:
         list (comparable): A list of the same items sorted from least to greatest
         '''
         # Copy the contents of list into sorted_list so that
         # we maintain the same data type and size
-        sorted_list = list.copy()
+        sorted_list = unsorted_list.copy()
         exc_set = set()
 
-        for i in range(len(list)):
+        for i in range(len(unsorted_list)):
             smallest_index, exc_set = SelectionSort.find_smallest(
-                list, exc_set)
-            sorted_list[i] = list[smallest_index]
+                unsorted_list, exc_set)
+            sorted_list[i] = unsorted_list[smallest_index]
 
         return sorted_list
 
